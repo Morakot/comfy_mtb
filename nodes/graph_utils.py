@@ -426,6 +426,8 @@ class MTB_AnyToString:
     CATEGORY = "mtb/converters"
 
     def do_str(self, input=''):
+        if input is None:
+            return ('',)
         if isinstance(input, str):
             return (input,)
         elif isinstance(input, torch.Tensor):
