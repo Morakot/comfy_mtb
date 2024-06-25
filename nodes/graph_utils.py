@@ -417,14 +417,15 @@ class MTB_AnyToString:
     @classmethod
     def INPUT_TYPES(cls):
         return {
-            "required": {"input": ("*")},
+            "required": { },
+            "optional": {"input": ("*")},
         }
 
     RETURN_TYPES = ("STRING",)
     FUNCTION = "do_str"
     CATEGORY = "mtb/converters"
 
-    def do_str(self, input):
+    def do_str(self, input=''):
         if isinstance(input, str):
             return (input,)
         elif isinstance(input, torch.Tensor):
